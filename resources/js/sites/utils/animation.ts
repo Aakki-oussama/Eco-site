@@ -157,3 +157,102 @@ export const viewportConfig = {
     once: true,
     margin: '-100px', // Triggers animation slightly before element is fully in view
 };
+
+/**
+ * Loader Container Animation
+ * 
+ * Controls the main loader wrapper fade in/out effect.
+ * Used for smooth entry and exit transitions of the entire loader screen.
+ */
+export const loaderContainer: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            duration: 0.3,
+            ease: smoothEase,
+        },
+    },
+    exit: {
+        opacity: 0,
+        transition: {
+            duration: 0.5,
+            ease: smoothEase,
+        },
+    },
+};
+
+/**
+ * Loader Welcome Text Animation
+ * 
+ * Animates the "Bienvenu Chez" text that appears above the main title.
+ * Slides down from top with fade in effect for elegant entrance.
+ */
+export const loaderWelcomeText: Variants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            delay: 0.2,
+            ease: smoothEase,
+        },
+    },
+};
+
+/**
+ * Loader Letter Animation
+ * 
+ * Controls individual letter animations for the main title.
+ * Each letter fades in and slides up with a staggered delay.
+ * Custom delay parameter allows sequential letter-by-letter reveal.
+ */
+export const loaderLetter: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (customDelay: number = 0) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+            delay: customDelay,
+            ease: smoothEase,
+        },
+    }),
+};
+
+/**
+ * Loader Subtitle Animation
+ * 
+ * Simple fade-in animation for the location subtitle (Meknès).
+ * Appears after the main title letters have finished animating.
+ */
+export const loaderSubtitle: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            duration: 0.8,
+            delay: 0.5,
+            ease: smoothEase,
+        },
+    },
+};
+
+/**
+ * Loader Progress Bar Animation
+ * 
+ * Smoothly fills the progress bar from 0% to 100% width.
+ * Uses linear easing for consistent, predictable progress indication.
+ * Provides visual feedback during the loading process.
+ */
+export const loaderProgressBar: Variants = {
+    hidden: { width: 0 },
+    visible: {
+        width: '100%',
+        transition: {
+            duration: 1.5,
+            ease: 'linear',
+        },
+    },
+};
