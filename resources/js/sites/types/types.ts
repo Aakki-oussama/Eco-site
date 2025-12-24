@@ -20,3 +20,14 @@ export interface NavLink {
     label: string;
     href: string;
 }
+
+export interface SocialLink {
+    icon: LucideIcon;
+    href: string;
+}
+
+export interface ContactInfo {
+    address: string;
+    email: string;
+    phone: string;
+}

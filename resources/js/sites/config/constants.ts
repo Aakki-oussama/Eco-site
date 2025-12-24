@@ -9,6 +9,13 @@ export const NAV_LINKS: NavLink[] = [
     { label: 'Avis', href: '#trust' },
 ];
 
+export const FOOTER_SERVICES = [
+    'Lavage au Kilo',
+    'Pressing & Repassage',
+    'Nettoyage Tapis',
+    'Service Entreprises'
+];
+
 /**
  * Loader Component Configuration
  * 
